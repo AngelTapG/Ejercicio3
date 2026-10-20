@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio3</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
+</head>
+<body id="cuerpo-pagina">
+    <div id="linea-superior" class="lineaamarilla"></div>
+    <div id="encabezado-banner" class="encabezado-rojo centrar"></div>
+
+    <h2 id="titulo-formulario" class="centrar">FORMULARIO - CONTACTANOS</h2>
+
+    <form id="formulariocomentarios" class="formulario-principal" autocomplete="off">
+
+        <div id="columna-etiquetas" class="caja1">
+            <div id="etiqueta-nombre" class="etiqueta"><span id="asterisco-nombre" class="rojo">*</span> Nombre:</div>
+            <div id="etiqueta-email" class="etiqueta">Email:</div>
+            <div id="etiqueta-telefono" class="etiqueta">Telefono:</div>
+            <div id="etiqueta-fecha" class="etiqueta"><span id="asterisco-fecha" class="rojo">*</span> Fecha:</div>
+            <div id="etiqueta-comentarios" class="etiqueta etiqueta-comentario"><span id="asterisco-comentarios" class="rojo">*</span> Comentarios:</div>
+        </div>
+
+        <div id="columna-campos" class="caja2">
+            <input id="nombre" name="nombre" type="text" class="campos" autocomplete="off">
+            <input id="campo-email" name="email" type="email" class="campos" autocomplete="off">
+            <input id="campo-telefono" name="telefono" type="tel" placeholder="Ejem:9991234567" class="campos" autocomplete="off">
+            <input id="fecha" name="fecha" type="date" class="campos" placeholder="dd/mm/aaaa">
+            <textarea id="comentario" name="comentarios" class="campos campocomentario"></textarea>
+            <button id="btn_validar" type="button" class="botontecnm">Enviar comentario</button>
+        </div>
+    </form>
+
+    <br><br>
+    <div id="pie-pagina" class="piedepagina centrar">
+        <p id="texto-nombre">Angel Eduardo Tapia Garcia</p>
+        <p id="texto-materia">Programacion Web</p>
+        <p id="texto-grupo">7SA</p>
+    </div>
+
+    <script>
+        $("#btn_validar").click(function () {
+            if ($("#nombre").val().trim() == '') {
+                alert("Escribe tu nombre ");
+                $("#nombre").focus();
+                return 0;
+            }
+            if ($("#fecha").val().trim() == '') {
+                alert("Escoge una fecha");
+                $("#fecha").focus();
+                return 0;
+            }
+            if ($("#comentario").val().trim() == '') {
+                alert("Escribe tu comentario ");
+                $("#comentario").focus();
+                return 0;
+            }
+            
+            $("#formulariocomentarios").submit();
+        });
+    </script>
+</body>
+</html>
